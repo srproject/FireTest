@@ -78,8 +78,8 @@ public class MainActivity extends AppCompatActivity {
             public void onDataChange(DataSnapshot dataSnapshot) {
 
                 lv.setAdapter(adapter);
-                ToneGenerator toneG = new ToneGenerator(AudioManager.STREAM_ALARM, 100);
-                toneG.startTone(ToneGenerator.TONE_CDMA_ALERT_CALL_GUARD, 200);
+                ToneGenerator toneG = new ToneGenerator(AudioManager.STREAM_MUSIC, 100);
+                toneG.startTone(ToneGenerator.TONE_SUP_RINGTONE, 200);
 
 
             }
