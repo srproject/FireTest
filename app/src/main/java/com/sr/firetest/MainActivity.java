@@ -2,6 +2,8 @@ package com.sr.firetest;
 
 import android.app.Dialog;
 import android.content.Context;
+import android.media.AudioManager;
+import android.media.ToneGenerator;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
@@ -76,6 +78,8 @@ public class MainActivity extends AppCompatActivity {
             public void onDataChange(DataSnapshot dataSnapshot) {
 
                 lv.setAdapter(adapter);
+                ToneGenerator toneG = new ToneGenerator(AudioManager.STREAM_ALARM, 100);
+                toneG.startTone(ToneGenerator.TONE_CDMA_ALERT_CALL_GUARD, 200);
 
 
             }
@@ -138,7 +142,7 @@ public class MainActivity extends AppCompatActivity {
     //DISPLAY INPUT DIALOG
     private void displayInputDialog() {
         Dialog d = new Dialog(this);
-        d.setTitle("Save To Firebase");
+        d.setTitle("Send To Firebase");
         d.setContentView(R.layout.inputdialog);
         nameEditTxt = (EditText) d.findViewById(R.id.nameEditText);
         propTxt = (EditText) d.findViewById(R.id.propellantEditText);
