@@ -22,7 +22,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:singleLine="true"
-                android:hint= "Email" />
+                android:hint= "Email"
+                android:inputType="textEmailAddress"
+                />
 
         </android.support.design.widget.TextInputLayout>
 
@@ -36,7 +38,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:singleLine="true"
-                android:hint= "Password 8 word" />
+                android:hint= "Password 6 word"
+                android:inputType="textPassword"
+                />
 
         </android.support.design.widget.TextInputLayout>
 

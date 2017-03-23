@@ -88,6 +88,8 @@ public class MainActivity extends AppCompatActivity {
         //ADAPTER
         adapter = new CustomAdapter(this, helper.retrieve());
         lv.setAdapter(adapter);
+        lv.setSelection(lv.getCount() - 1);
+
 
 
         db.addValueEventListener(new ValueEventListener() {
@@ -97,6 +99,8 @@ public class MainActivity extends AppCompatActivity {
                 lv.setAdapter(adapter);
                 ToneGenerator toneG = new ToneGenerator(AudioManager.STREAM_MUSIC, 100);
                 toneG.startTone(ToneGenerator.TONE_SUP_RINGTONE, 200);
+                lv.setSelection(lv.getCount() - 1);
+
 
 
             }
@@ -104,6 +108,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onCancelled(DatabaseError databaseError) {
                 lv.setAdapter(adapter);
+                lv.setSelection(lv.getCount() - 1);
+
 
             }
         });
@@ -216,6 +222,9 @@ public class MainActivity extends AppCompatActivity {
         lgBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+
+
 
                 firebaseAuth.signInWithEmailAndPassword(emailEditText.getText().toString(), passed.getText().toString())
                         .addOnCompleteListener(MainActivity.this, new OnCompleteListener<AuthResult>() {
